@@ -60,18 +60,18 @@ pipeline {
                     ]) {
                         // Safely write .env without using `sh` interpolation
                         writeFile file: '.env', text: """\
-MYSQL_ROOT_PASSWORD=${env.MYSQL_ROOT_PASS}
-MYSQL_DATABASE=attractions_db
-MYSQL_USER=attractions_user
-MYSQL_PASSWORD=${env.MYSQL_PASS}
-MYSQL_PORT=3306
-PHPMYADMIN_PORT=8888
-API_PORT=3001
-DB_PORT=3306
-FRONTEND_PORT=3000
-NODE_ENV=production
-API_HOST=${params.API_HOST}
-""".stripIndent()
+                        MYSQL_ROOT_PASSWORD=${env.MYSQL_ROOT_PASS}
+                        MYSQL_DATABASE=attractions_db
+                        MYSQL_USER=attractions_user
+                        MYSQL_PASSWORD=${env.MYSQL_PASS}
+                        MYSQL_PORT=3306
+                        PHPMYADMIN_PORT=8888
+                        API_PORT=3001
+                        DB_PORT=3306
+                        FRONTEND_PORT=3000
+                        NODE_ENV=production
+                        API_HOST=${params.API_HOST}
+                        """.stripIndent()
 
                         // Avoid printing secrets
                         echo ".env file created successfully"
