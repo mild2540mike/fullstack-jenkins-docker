@@ -49,7 +49,7 @@ export default function Page() {
       </header>
 
       {!rows || rows.length === 0 ? (
-        <div className="empty">No attractions found.</div>
+        <div className="empty">Not found.</div>
       ) : (
         <section className="grid" aria-live="polite">
           {rows.map((x) => (
